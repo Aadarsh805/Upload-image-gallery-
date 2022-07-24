@@ -9,13 +9,3 @@
   flex-direction: column;
   gap: 3rem;
 }
-
-.nav{
-  padding: 1rem 2rem;
-}
-
-.nav span{
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: rgb(255, 132, 173);
-}
