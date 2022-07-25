@@ -1,9 +1,9 @@
 import FileUploadIcon from "@mui/icons-material/FileUpload";
 import React, { useState } from "react";
+import { ProgressBar } from "./ProgressBar";
 
 export const Upload = () => {
   const [file, setFile] = useState(null);
-  console.log(file);
   const [error, setError] = useState(null);
   const types = ["image/png", "image/jpeg", "image/jpg"];
   const handleChange = (e) => {
@@ -29,8 +29,14 @@ export const Upload = () => {
       </label>
 
       <div className="file__container">
-        {file && <div>{file.name}</div>}
-    </div>
+        {error && <div className="error">{error}</div>}
+        {file && (
+          <div>
+            {file.name}
+            {file && <ProgressBar file={file} setFile={setFile} />}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
